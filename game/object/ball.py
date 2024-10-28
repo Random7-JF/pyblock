@@ -1,11 +1,17 @@
 import pygame as pg
+from game.constants import *
 
 class Ball(pg.sprite.Sprite):
-    def __init__(self) -> None:
+    def __init__(self, position:pg.Vector2) -> None:
         super().__init__()
-    
+        self.position = position
+        self.radius = BALL_RADIUS
+        self.speed = BALL_SPEED
+        self.direction = pg.Vector2(0,1)   
+
     def update(self, delta_time) -> None:
-        pass
+        velocity = self.direction * self.speed * delta_time
+        self.position += velocity
     
     def draw(self, screen) -> None:
-        pass
+        pg.draw.circle(screen, "red", self.position, self.radius)

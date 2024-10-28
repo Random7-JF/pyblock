@@ -3,6 +3,7 @@ from game.constants import *
 from game.level.level import Level
 from game.object.block import Block
 from game.object.player import Player
+from game.object.ball import Ball
 
 class Manager():
     def __init__(self) -> None:
@@ -29,3 +30,6 @@ class Manager():
         self.draw_group.add(player)
 
         # spawn ball
+        ball = Ball(pg.Vector2(SCREEN_WIDTH / 2, SCREEN_HEIGHT * 0.75))
+        self.update_group.add(ball)
+        self.draw_group.add(ball)
