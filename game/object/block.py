@@ -9,14 +9,14 @@ class Block(pg.sprite.Sprite):
         self.height = LEVEL_BLOCK_HEIGHT
         self.health = 2
 
-    
+
     def update(self, delta_time) -> None:
         if self.health <= 0:
             #delete
             pass
-    
+
     def draw(self, screen) -> None:
-        pg.draw.rect(screen,"white", 
+        pg.draw.rect(screen,"white",
                      pg.Rect(self.position.x - (self.width),
-                            self.position.y - (self.height), 
+                            self.position.y - (self.height),
                             self.width, self.height), 4)
