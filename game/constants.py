@@ -6,6 +6,7 @@ FRAMERATE = 144
 #Level Settings
 LEVEL_BLOCK_WIDTH=125
 LEVEL_BLOCK_HEIGHT=50
+LEVEL_FILE_PATH="game/level/levels/"
 
 # player settings
 PLAYER_HEIGHT = 25

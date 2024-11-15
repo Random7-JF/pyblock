@@ -8,10 +8,12 @@ class Ball(pg.sprite.Sprite):
         self.radius = BALL_RADIUS
         self.speed = BALL_SPEED // 2
         self.direction = pg.Vector2(0,1)
+        self.active = False
 
     def update(self, delta_time) -> None:
-        velocity = self.direction * self.speed * delta_time
-        self.position += velocity
+        if self.active:
+            velocity = self.direction * self.speed * delta_time
+            self.position += velocity
 
     def draw(self, screen) -> None:
-        pg.draw.circle(screen, "red", self.position, self.radius)
+        self.rect = pg.draw.circle(screen, "red", self.position, self.radius)

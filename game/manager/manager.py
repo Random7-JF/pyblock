@@ -1,6 +1,6 @@
 import pygame as pg
 from game.constants import *
-from game.level.level import Level
+from game.level.level import *
 from game.object.block import Block
 from game.object.player import Player
 from game.object.ball import Ball
@@ -15,8 +15,8 @@ class Manager():
     def spawn_level(self) -> None:
         # create level
         level = "level" + str(self.level)
-        blocks = Level(level)
-        for block in blocks.layout:
+        blocks = load_level(level)
+        for block in blocks:
             spawn = Block(pg.Vector2(block[0],block[1]))
             self.update_group.add(spawn)
             self.draw_group.add(spawn)
